@@ -15,14 +15,24 @@
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
-    "importHelpers": true,
+    "importHelpers": false,
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@guards/*": ["src/app/core/guards/*"],
+      "@pipes/*": ["src/app/core/pipes/*"],
+      "@services/*": ["src/app/core/services/*"],
+      "@layouts/*": ["src/app/layouts/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@config/*":["src/app/core/config/*"],
+      "@utils/*":["src/app/core/utils/*"],
+      "@dtos/*":["src/app/core/dtos/*"],
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

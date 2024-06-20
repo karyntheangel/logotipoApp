@@ -1,0 +1,41 @@
+<div class="max-h-screen pt-5 pb-8 md:pt-6  px-3 md:px-8 surface-900">
+<div class="flex flex-column md:flex-row px-4 md:px-4 lg:justify-content-between">
+    <div class="col-12 md:col-10 lg:col-7">
+        <a class="flex justify-content-start w-5 md:w-4">
+            <img [src]="'assets/layout/images/logoAppBrand/logo-white.png'" class="w-full md:w-8 lg:w-9" alt="Logotipo logo">
+        </a>
+        <p class="text-lg md:text-xl text-300 pt-5">
+            Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit, sed do eiusmod tempor.
+        </p>
+        <div class="w-full flex md:gap-3 lg:gap-3 xl:gap-5 py-2 md:pt-4">
+            <ul class="list-none md:flex md:justify-content-between px-0 mx-0 w-5 xl:w-4 text-lg">
+                <li class="cursor-pointer text-300 mb-3" *ngFor="let _ of footerListGroup1">{{_}}</li>
+            </ul>
+            <ul class="list-none md:flex md:justify-content-between px-0 mx-0 w-5 xl:w-4 text-lg">
+                <li class="cursor-pointer text-300 mb-3" *ngFor="let _ of footerListGroup2">{{_}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-12 md:col-3 lg:col-4  pt-2 md:flex md:justify-content-end">
+       <div class="md:w-full lg:w-9 xl:w-8">
+        <p class="text-300 text-xl md:w-full xl:ml-8">Get the app</p>
+        <div class="flex md:block md:w-full md:justify-content-center xl:mr-8">
+            <a href="https://apps.apple.com/us/app/apple-store/" rel="Apple AppStore" class="flex md:justify-content-end w-5 md:w-full  md:pb-4">
+                <img [src]="'assets/layout/images/img/apps/apple-store.png'" class="w-11 md:w-8 lg:w-9" alt="Logotipo logo">
+            </a>
+            <a href="https://play.google.com/" rel="Google PlayStore" class="flex md:justify-content-end w-5 md:w-full  ">
+                <img [src]="'assets/layout/images/img/apps/google-app-store.png'" class="w-11 md:w-8 lg:w-9" alt="Logotipo logo">
+            </a>
+        </div>
+       </div>
+    </div>
+</div>
+<p-divider></p-divider>
+<div class="flex flex-column-reverse md:flex-row md:align-content-center md:align-items-center justify-content-between px-4">
+    <p class=" text-500 py-0 my-0 lg:text-lg">© 2077 Flexbip. All rights reserved.</p>
+
+        <ul class="list-none flex justify-content-between lg:justify-content-end px-0 mx-0 w-5 text-lg">
+            <li class=" text-3xl mr-3 lg:mr-4" *ngFor="let a of footerBrandList"><a href="{{a.link}}" class="text-300 text-3xl pi {{a.label}}" rel="a.rel"></a></li>
+        </ul>
+</div>
+</div>

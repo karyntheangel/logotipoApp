@@ -1,0 +1,214 @@
+<app-header></app-header>
+<section>
+    <div class="relative md:flex md:flex-row justify-content-between mx-5 my-5 md:mx-7 md:my-2 lg:mx-8 lg:my-6">
+        <div class="col-12 md:col-6 static md:pl-5 md:py-7">
+            <h1 class="text-5xl md:text-4xl lg:text-6xl xl:text-7xl md:pt-4 lg:pt-5">
+                Zero Hassle Push to Talk conversations
+            </h1>
+            <p class="md:w-10 lg:w-7 text-lg pt-3">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <div class="w-full md:w-10 lg:w-8 md:flex md:gap-2 my-4 md:my-6 lg:my-7">
+                <p-button pRipple pElement icon="pi pi-play" label="Demo" styleClass="block md:flex w-full mb-2 md:mb-0 md-w-4 md:px-4 p-button-outlined p-button-plain"></p-button>
+                <p-button pRipple pElement label="Get started" styleClass="block md:flex w-full md-w-4"></p-button>
+            </div>
+            <div class="w-10 mt-5 md:mt-0 lg:w-full flex gap-4 align-items-center align-content-center">
+                    <p-avatarGroup>
+                        <p-avatar image="assets/layout/images/people/olivya-riyhe.png" size="large" shape="circle"></p-avatar>
+                        <p-avatar styleClass="bg-yellow-700" image="assets/layout/images/people/phoenix-baker.png" size="large" shape="circle"></p-avatar>
+                        <p-avatar styleClass="bg-red-100" image="assets/layout/images/people/amy-adobespark.png" size="large" shape="circle"></p-avatar>
+                        <p-avatar styleClass="bg-yellow-700" image="assets/layout/images/people/gretta-avatar.png" size="large" shape="circle"></p-avatar>
+                        <p-avatar styleClass="bg-bluegray-300" image="assets/layout/images/people/lya-avatar.png" size="large" shape="circle"></p-avatar>
+                    </p-avatarGroup>
+                    <div>
+                        <div class="flex gap-1 lg:gap-2 align-content-center align-items-center">
+                            <i *ngFor="let _ of [1, 2, 3, 4, 5]" class="md:text-lg lg:text-3xl text-yellow-300 pi pi-star-fill"></i>
+                            <p class="font-bold md:text-base lg:text-xl">5.0</p>
+                        </div>
+                        <div >
+                            <p class="text-color-secondary text-sm  lg:text-2xl"> from 200+ reviews </p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="col-12 md:col-6 static md:pt-7 pb-0 bg-gray-100 lgt-imgshape ">
+                <a class="flex justify-content-center w-full pt-4 " routerLink="/home">
+                    <img [src]="'assets/layout/images/img/image.png'" class="w-11 md:w-9 lg:w-6" alt="Logotipo app phone">
+                </a>
+        </div>
+        <div class="hidden absolute lg:block bottom-0 lgt-notifications-left p-4 w-max">
+            <div class="bg-white py-3 border-round gap-4 flex justify-content-start  px-2  mb-3">
+                <p-avatar styleClass="bg-yellow-700" image="assets/layout/images/people/olivya-riyhe.png" size="large" shape="circle"></p-avatar>
+                <div>
+                    <p>
+                        <span class="text-primary">Olivia Rhye</span> followed you!
+                        <br>
+                        <span class="text-color-secondary">@oliviarhye</span>
+                    </p>
+                </div>
+            </div>
+            <div class="bg-white py-3 border-round gap-4 flex justify-content-start  px-2 opacity-70 mb-3">
+                <p-avatar styleClass="bg-bluegray-300" image="assets/layout/images/people/lya-avatar.png" size="large" shape="circle"></p-avatar>
+                <div>
+                    <p>
+                        <span class="text-primary">Candice Wu</span>  and 2 other gave you
+                        <br>
+                        kudos on <span class="text-primary">Clubhouse 101</span> post
+                    </p>
+                </div>
+            </div>
+            <div class="bg-white py-3 border-round gap-4 flex justify-content-start  px-2 opacity-60 mb-3">
+                <p-avatar styleClass="bg-yellow-700" image="assets/layout/images/people/phoenix-baker.png"  size="large" shape="circle"></p-avatar>
+                <div>
+                    <p>
+                        <span class="text-primary">Phoenix Baker </span>joined your team 
+                        <br>
+                        <span class="text-primary">Melbourne Startups Growth</span></p>
+                </div>
+            </div>
+            <div class="bg-white py-3 border-round gap-4 flex justify-content-start  px-2 opacity-50">
+                <p-avatar styleClass="bg-red-100" image="assets/layout/images/people/amy-adobespark.png"  size="large" shape="circle"></p-avatar>
+                <div>
+                    <p>
+                        <span class="text-primary">Lana Steiner Baker</span> just launched
+                        <br>
+                        <span class="text-primary">The 10k users challenge</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="mx-5 my-8 md:mx-7 md:my-6 lg:mx-8 lg:my-8">
+       <div class="pt-5 md:pt-6 lg:pt-8 lg:pb-6">
+            <h2 class="my-3 md:my-4 my-5 text-4xl md:text-3xl lg:text-5xl xl:text-6xl text-center">Great products,<br class="md:hidden"> faster than ever</h2>
+            <p class="text-xl text-color-secondary text-center">Everything you need to build <br class="md:hidden"> corporate and great products.</p>
+       </div>
+       <div class="md:flex md:justify-content-center md:mt-4 lg:mt-8">
+        <div class="md:px-4 lg:px-8">
+            <p class="text-center font-bold p-3">
+                <span class="text-7xl text-primary">400+</span> <br>
+                <span class="text-xl ">Projects completed</span>
+            </p>
+        </div>
+        <div class="md:px-4 lg:px-8">
+            <p class="text-center font-bold p-3">
+                <span class="text-7xl font-bold text-primary">600%</span> <br>
+                <span class="text-xl ">Return on investment</span>
+            </p>
+        </div>
+        <div class="md:px-4 lg:px-8">
+            <p class="text-center font-bold p-3">
+                <span class="text-7xl font-bold text-primary">10K</span> <br>
+                <span class="text-xl ">Global downloads</span>
+            </p>
+        </div>
+       </div>
+    </div>
+</section>
+<section>
+    <div class="px-5 py-5 md:px-7 md:py-8 lg:px-8 lg:py-8">
+        <div class="md:mx-2 lg:mx-4 flex-col md:flex md:justify-content-center md:align-content-center md:align-items-center max-h-screen">
+            <div class=" col-12 md:col-6">
+                <i *ngFor="let _ of [1, 2, 3, 4, 5]" class="text-xl text-yellow-300 pi pi-star-fill mr-2"></i>
+                <h2 class="text-4xl md:text-3xl lg:text-5xl xl:text-6xl py-3 lg:py-5">We’ve really sped up our workflow with Company and haven’t looked back.</h2>
+                <div class="py-3 border-round gap-4 flex justify-content-start  px-2  mb-3">
+                    <p-avatar styleClass="bg-bluegray-700" image="assets/layout/images/people/lya-avatar.png"  size="large" shape="circle"></p-avatar>
+                    <div class="flex justify-content-around align-items-center gap-4 lg:gap-8">
+                        <p>
+                            <span class="font-bold text-lg">Katherine Moss </span>
+                            <br>
+                            <span class="text-secondary">Project Manager, Layers</span>
+                        </p>
+                        <div class="flex gap-4 lg:gap-8">
+                            <i class="pi pi-arrow-left"></i>
+                            <i class="pi pi-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 md:col-6 max-h-screen">
+                <div class="flex justify-content-center align-content-end align-items-end gap-5 mb-3">
+                    <div class="w-5 md:w-4 h-7rem lg:h-15rem flex align-items-stretch">
+                        <img [src]="'assets/layout/images/img/manComputer.jpg'" class="responsive-img" alt="Logotipo app phone">
+                    </div>
+                    <div class="w-5 md:w-4 h-10rem lg:h-20rem">
+                        <img [src]="'assets/layout/images/img/womanBook.jpg'" class="responsive-img" alt="Logotipo app phone">
+                    </div>
+                </div>
+                <div class="flex justify-content-center gap-2">
+                    <div class="flex justify-content-center align-content-start align-items-start gap-4">
+                        <div class="w-5 md:w-5 h-5rem lg:h-10rem flex align-items-stretch">
+                            <img [src]="'assets/layout/images/img/tables.jpg'" class="responsive-img" alt="Logotipo app phone">
+                        </div>
+                        <div class="w-6 md:w-4 h-10rem lg:h-20rem">
+                            <img [src]="'assets/layout/images/img/womanTelephone.jpg'" class="responsive-img" alt="Logotipo app phone">
+                        </div>
+                        <div class="w-5 md:w-5 h-5rem lg:h-10rem">
+                            <img [src]="'assets/layout/images/img/womanComputer.jpg'" class="responsive-img" alt="Logotipo app phone">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="mx-5 max-h-screen py-8 md:mx-8">
+        <div class="flex-column justify-content-center justify-content-center">
+            <div>
+                <h2 class="my-3 md:my-4 my-5 text-4xl md:text-3xl lg:text-5xl xl:text-6xl text-center">Frequently asked questions</h2>
+                <p class="text-xl text-color-secondary text-center">Everything you need to know about the product and billing.</p>
+            </div>
+            <div class="my-4 w-full lg:w-9 lg:mx-auto flex-column justify-content-center">
+                <p-panel [toggleable]="true" [collapsed]="true">
+                    <ng-template pTemplate="header"><span class="py-4 text-color-secondary">Is there a free trial available?</span></ng-template>
+                    <p> Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.</p>
+                </p-panel>
+                <p-panel [toggleable]="true" [collapsed]="true">
+                    <ng-template pTemplate="header"><span class="py-4 text-color-secondary">Can I change my plan later?</span></ng-template>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </p-panel>
+                <p-panel  [toggleable]="true" [collapsed]="true">
+                    <ng-template pTemplate="header"><span class="py-4 text-color-secondary">What is your cancellation policy?</span></ng-template>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </p-panel>
+                <p-panel [toggleable]="true" [collapsed]="true">
+                    <ng-template pTemplate="header"><span class="py-4 text-color-secondary">Can other info be added to an invoice?</span></ng-template>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </p-panel>
+                <p-panel [toggleable]="true" [collapsed]="true">
+                    <ng-template pTemplate="header"><span class="py-4 text-color-secondary">How does billing work?</span></ng-template>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </p-panel>
+                <p-panel [toggleable]="true" [collapsed]="true">
+                    <ng-template pTemplate="header"><span class="py-4 text-color-secondary">How do I change my account email?</span></ng-template>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </p-panel>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="max-h-screen pt-0 pb-8 md:pt-6  mx-auto md:mx-8">
+        <div class="flex-column justify-content-center justify-content-center">
+            <p-avatarGroup styleClass="flex justify-content-center">
+                <p-avatar styleClass="w-4rem h-4rem bg-yellow-700" image="assets/layout/images/people/phoenix-baker.png" shape="circle"></p-avatar>
+                <p-avatar styleClass="w-5rem h-5rem relative z-5" image="assets/layout/images/people/olivya-riyhe.png" shape="circle"></p-avatar>
+                <p-avatar styleClass="w-4rem h-4rem bg-bluegray-300" image="assets/layout/images/people/lya-avatar.png" shape="circle"></p-avatar>
+            </p-avatarGroup>
+        </div>
+        <div >
+            <h2 class="mt-5 md:mt-7 mb-3 text-xl md:text-xl lg:text-2xl xl:text-3xl text-center">Still have questions?</h2>
+            <p class="text-xl text-color-secondary text-center">Can’t find the answer you’re looking for? Please chat to our friendly team.</p>
+            <div class="w-full flex justify-content-center py-4"><p-button label="Get in touch" styleClass="mx-auto"></p-button></div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

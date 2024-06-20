@@ -1,0 +1,19 @@
+<p-menubar [model]="menuItems">
+    <ng-template class="mr-6" pTemplate="start">
+        <a class="flex justify-content-end w-7 md:w-9 lg:w-11 " routerLink="/home">
+            <img [src]="'assets/layout/images/logoAppBrand/logo.png'" class="w-11 md:w-8 lg:w-8" alt="Logotipo logo">
+          </a>
+    </ng-template>
+    <ng-template pTemplate="end">
+        <div *ngIf="home" class="hidden md:flex justify-content-start mr-4 md:mr-8 gap-2">
+            <p-button pRipple pElement label="Log in" styleClass="p-button-text p-button-plain"></p-button>
+            <p-button pRipple pElement label="Sign up" styleClass=""></p-button>
+        </div>
+        <div class="hidden md:flex justify-content-start align-items-center mr-4 md:mr-8 gap-4" *ngIf="!home">
+            <a class="text-color-secondary no-underline"><i class="text-2xl pi pi-cog"></i></a>
+            <a class="text-color-secondary no-underline"><i class="text-2xl pi pi-bell"></i></a>
+            <p-avatar styleClass="bg-yellow-700" image="assets/layout/images/people/olivya-riyhe.png" size="large" shape="circle"></p-avatar>
+        </div>
+    </ng-template>
+</p-menubar>
+

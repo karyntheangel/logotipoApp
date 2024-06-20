@@ -1,0 +1,24 @@
+::ng-deep .lgt-imgshape{
+border-radius: 320px 320px 24px 24px;
+opacity: 0px;
+}
+
+::ng-deep .lgt-notifications-left{
+    left: 45%!important;
+}
+
+::ng-deep .responsive-img {
+    width:100%;
+    height:100%;
+    object-fit:cover !important;
+  }
+
+  ::ng-deep .p-panel .p-panel-header {
+    border-left: 0px!important;
+    border-right: 0px!important;
+  }
+
+  ::ng-deep p-panel .p-panel-content {
+    border: 0px!important;
+    background: var(--surface-ground)!important;
+  }
