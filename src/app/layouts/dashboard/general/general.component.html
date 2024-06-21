@@ -1,1 +1,109 @@
-<p>general works!</p>
+<div class="grid pt-6 md:hidden">
+    <ng-container *ngFor="let item of orderListMobile">
+        <ng-container *ngIf="item === 'search'; then searchTemplate else 
+                          item === 'filterbar' ? filterbarTemplate :
+                          item === 'newbutton' ? newbuttonTemplate : 
+                          item === 'tags' ? tagsTemplate : otherTemplate">
+        </ng-container>
+    </ng-container>
+</div>
+<div class="flex-row pt-6 hidden md:flex md:align-items-center">
+    <ng-container class="flex-row" *ngFor="let item of orderListTablet">
+        <ng-container *ngIf="item === orderListTablet[0]; then filterbarTemplate else 
+        item === orderListTablet[1] ? tagsTemplate :
+        item === orderListTablet[2] ? searchTemplate : 
+        item === orderListTablet[3] ? newbuttonTemplate : otherTemplate">
+    </ng-container>
+    </ng-container>
+</div>
+<div *ngIf="showFilters" class="flex justify-content-start gap-3 py-2 overflow-x-scroll md:overflow-x-hidden">
+    <p-dropdown appendTo="body" styleClass="w-11rem lg:w-20rem" [options]="genders" [(ngModel)]="selectedGender" optionLabel="nombre" [showClear]="true" placeholder="Género"></p-dropdown>
+    <p-dropdown appendTo="body" styleClass="w-11rem lg:w-20rem" [options]="country" [(ngModel)]="selectedCountry" optionLabel="nombre" [showClear]="true" placeholder="País"></p-dropdown>
+    <p-dropdown appendTo="body" styleClass="w-11rem lg:w-20rem" [options]="state" [(ngModel)]="selectedState" optionLabel="nombre" [showClear]="true" placeholder="Estado"></p-dropdown>
+</div>
+<ng-template #searchTemplate>
+    <div class="col-12 md:col-3">
+        <span class="p-input-icon-left w-full">
+            <i class="pi pi-search"></i>
+            <input class="w-full" pInputText type="text" placeholder="Search..." />
+        </span>
+    </div>
+</ng-template>
+<ng-template #filterbarTemplate>
+    <div class="col-10 md:col-2">
+        <p-button
+            (onClick)="filterShow()" styleClass="w-full lg:w-7 p-button-outlined p-button-plain mr-2 flex justify-content-center gap-2 align-items-center">
+            <i class="pi pi-filter text-xl"></i>
+            <span class="md:hidden">Edit </span> Filters
+        </p-button>
+    </div>
+</ng-template>
+<ng-template #newbuttonTemplate>
+    <div class="col-2 md:col-2">
+        <p-button class="p-button-outlined md:w-full mr-2">
+            <i class="pi pi-plus"></i>
+            <span class="hidden md:block w-5rem lg:w-8rem md:text-sm">Nuevo <br class="lg:hidden"> usuario</span>
+        </p-button>
+    </div>
+</ng-template>
+<ng-template #tagsTemplate>
+    <div class="col-12 md:col-5">
+        <div class="flex gap-3">
+            <p-tag severerity="primary" styleClass="text-sm opacity-70 w-7rem h-2rem" value="País: México"></p-tag>
+            <p-tag severerity="primary" styleClass="text-sm opacity-70 w-7rem h-2rem" value="Estado: CDMX"></p-tag>
+        </div>
+    </div>
+</ng-template>
+<ng-template #otherTemplate>
+    <div>Template for other cases</div>
+</ng-template>
+
+<section class="pt-3">
+    <p-table [value]="mockClientes" dataKey="id"  styleClass="shadow-3" responsiveLayout="scroll" [rows]="10" 
+    [globalFilterFields]="['nombre','genero','pais']" [paginator]="true" [rowsPerPageOptions]="[10,20,30]" 
+    [showCurrentPageReport]="true" selectionMode="multiple" [rowHover]="true" [(selection)]="clienteSeleccionado">
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width: 3rem">
+                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                </th>
+                <th pSortableColumn="cliente">Cliente <p-sortIcon field="cliente"></p-sortIcon></th>
+                <th pSortableColumn="genero">Género <p-sortIcon field="genero"></p-sortIcon></th>
+                <th pSortableColumn="pais">País <p-sortIcon field="pais"></p-sortIcon></th>
+                <th pSortableColumn="estado">Estado <p-sortIcon field="estado"></p-sortIcon></th>
+                <th>opciones </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-cliente>
+            <tr>
+                <td>
+                    <p-tableCheckbox [value]="cliente"></p-tableCheckbox>
+                </td>
+                <td style="width:50%; min-width:10rem;"><span class="p-column-title">Nombre</span>
+                    <div class="flex align-items-center gap-2"> 
+                        <p-avatar styleClass="bg-yellow-700" image="{{cliente.avatarSRC}}" size="large" shape="circle"></p-avatar>
+                        <p>{{cliente.nombre}}</p>
+                    </div>
+                </td>
+                <td style="width:10%; min-width:10rem;">
+                    <span class="p-column-title">Género</span>
+                    <p-chip styleClass="{{genderClass(cliente.genero)}}" label="{{cliente.genero}}"></p-chip>
+                    
+                </td>
+                <td style="width:10%; min-width:8rem;">
+                    <span class="p-column-title">País</span>
+                    {{cliente.pais}}
+                </td>
+                <td style="width:10%; min-width:10rem;">
+                    <span class="p-column-title">Estado</span>
+                    {{cliente.estado}}
+                </td>
+                <td>
+                    <div class="flex">
+                        <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-text text-color-secondary"></button>
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</section>
