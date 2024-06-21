@@ -1,3 +1,16 @@
+<p-dialog header="Usuario" [(visible)]="clientForm" styleClass="w-11 md:w-4">
+    <app-clientForm (closeDialog)=" closeDialogF()" (reloadCustomers)="reloadCustomers()" [customerToEdit]="clienteSeleccionado"></app-clientForm>
+</p-dialog>
+<p-dialog *ngIf="selectedClientDelete" header="Eliminar usuario {{selectedClientDelete.nombre}}" [(visible)]="deleteClientForm" styleClass="w-11 md:w-4">
+    <div class="flex justify-content-center">
+        <p class="text-lg">¿Eliminar usuario {{selectedClientDelete.nombre}}?</p>
+    </div>
+    <div class="flex-row md:flex-col  justify-content-around py-3">
+        <p-button (onClick)="closeDeleteDialog()" label="Cancel" styleClass="col-12 md:col-6  p-button-text"></p-button>
+        <p-button (onClick)="deleteUser(selectedClientDelete)" label="Confirm"  styleClass="col-12 md:col-6  p-button-primary" ></p-button>
+    </div>
+</p-dialog>
+<p-messages key="requestInfo" ></p-messages>
 <div class="grid pt-6 md:hidden">
     <ng-container *ngFor="let item of orderListMobile">
         <ng-container *ngIf="item === 'search'; then searchTemplate else 
@@ -17,15 +30,16 @@
     </ng-container>
 </div>
 <div *ngIf="showFilters" class="flex justify-content-start gap-3 py-2 overflow-x-scroll md:overflow-x-hidden">
-    <p-dropdown appendTo="body" styleClass="w-11rem lg:w-20rem" [options]="genders" [(ngModel)]="selectedGender" optionLabel="nombre" [showClear]="true" placeholder="Género"></p-dropdown>
-    <p-dropdown appendTo="body" styleClass="w-11rem lg:w-20rem" [options]="country" [(ngModel)]="selectedCountry" optionLabel="nombre" [showClear]="true" placeholder="País"></p-dropdown>
-    <p-dropdown appendTo="body" styleClass="w-11rem lg:w-20rem" [options]="state" [(ngModel)]="selectedState" optionLabel="nombre" [showClear]="true" placeholder="Estado"></p-dropdown>
+    <p-dropdown (onChange)="filterGender($event)" appendTo="body" styleClass="w-11rem lg:w-20rem" [options]="genders" [(ngModel)]="selectedGender" optionLabel="nombre" [showClear]="true" placeholder="Género"></p-dropdown>
+    <p-dropdown appendTo="body" (onChange)="onCountryChange($event); filterCountry($event)" styleClass="w-11rem lg:w-20rem" [options]="country" [(ngModel)]="selectedCountry" optionLabel="nombre" [showClear]="true" placeholder="País"></p-dropdown>
+    <p-dropdown (onChange)="filterState($event)" appendTo="body"  [disabled]="loadedCountry" styleClass="w-11rem lg:w-20rem" [options]="state" [(ngModel)]="selectedState" optionLabel="nombre" [showClear]="true" placeholder="Estado"></p-dropdown>
+    <p-button (onClick)="reloadCustomers()" styleClass="p-button-outlined" label="Clean Filters"></p-button>
 </div>
 <ng-template #searchTemplate>
     <div class="col-12 md:col-3">
         <span class="p-input-icon-left w-full">
             <i class="pi pi-search"></i>
-            <input class="w-full" pInputText type="text" placeholder="Search..." />
+            <input class="w-full" pInputText type="text" placeholder="Search..." (input)="generalFilter($event)"/>
         </span>
     </div>
 </ng-template>
@@ -40,7 +54,7 @@
 </ng-template>
 <ng-template #newbuttonTemplate>
     <div class="col-2 md:col-2">
-        <p-button class="p-button-outlined md:w-full mr-2">
+        <p-button class="p-button-outlined md:w-full mr-2" (onClick)="openNewCustomer()">
             <i class="pi pi-plus"></i>
             <span class="hidden md:block w-5rem lg:w-8rem md:text-sm">Nuevo <br class="lg:hidden"> usuario</span>
         </p-button>
@@ -100,7 +114,8 @@
                 </td>
                 <td>
                     <div class="flex">
-                        <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-text text-color-secondary"></button>
+                        <p-button (onClick)="openDeleteCustomer(cliente)" icon="pi pi-trash" styleClass="p-button-rounded p-button-text text-color-secondary"></p-button>
+                        <p-button (onClick)="openEditCustomer(cliente)" icon="pi pi-pencil" styleClass="p-button-rounded p-button-text text-color-secondary"></p-button>
                     </div>
                 </td>
             </tr>

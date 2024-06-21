@@ -12,6 +12,7 @@ import { SharedModule } from '@shared/shared.module';
 import { PagesModule } from '@layouts/pages/pages.module';
 import { DashboardModule } from '@layouts/dashboard/dashboard.module';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AppRoutingModule } from './app-routing.module';
     SharedModule,
     PagesModule,
     BrowserAnimationsModule,
-    DashboardModule
+    DashboardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

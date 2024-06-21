@@ -19,5 +19,14 @@ export interface Pais{
 
 export interface Estado{
     id:string,
-    nombre:string
+    nombre:string,
+    pais_id:string
+}
+
+export interface PeticionCliente{
+    nombre:string,
+    genero:string,
+    pais:string,
+    estado:string,
+    avatarSRC:string
 }

@@ -1,0 +1,1 @@
+export const FORMATONOMBREPERSONA=/^[A-Za-zÁÉÍÓÚáéíóúÜü]{1,100}(?: [A-Za-zÁÉÍÓÚáéíóúÜü]{1,100})*$/;

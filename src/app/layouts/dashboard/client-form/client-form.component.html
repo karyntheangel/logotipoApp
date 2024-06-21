@@ -1,0 +1,38 @@
+<p-messages key="requestFormInfo" ></p-messages>
+<form [formGroup]="formCustomer">
+    <div>
+        <div class="field">
+            <label for="nombre">Nombre</label>
+            <input pInputText formControlName="customerName" id="nombre" type="text" 
+            [ngClass]="{'ng-invalid ng-dirty': formCustomer.get('customerName')?.invalid && formCustomer.get('customerName')?.touched}"
+            class=" p-2 w-full">
+            <small class="p-error" *ngIf="formCustomer.get('customerName')?.invalid && formCustomer.get('customerName')?.touched">Entrada incorrecta, el campo solo acepta nombres.</small>
+        </div>
+        <div class="field">
+            <label for="pais">País</label>
+            <p-dropdown formControlName="customerCountry" (onChange)="onCountryChange($event)" [options]="country" id="pais" appendTo="body"
+            placeholder="Seleccione" [ngClass]="{'ng-invalid ng-dirty': formCustomer.get('customerCountry')?.invalid && formCustomer.get('customerCountry')?.touched}"
+            styleClass="  w-full" optionLabel="nombre"></p-dropdown>
+            <small class="p-error" *ngIf="formCustomer.get('customerCountry')?.invalid && formCustomer.get('customerCountry')?.touched" >Dato requerido.</small>
+        </div>
+        <div class="field">
+            <label for="estado">Estado</label>
+            <p-dropdown formControlName="customerState" id="estado" appendTo="body" [showClear]="false" 
+            placeholder="Seleccione" [ngClass]="{'ng-invalid ng-dirty': formCustomer.get('customerState')?.invalid && formCustomer.get('customerState')?.touched}"
+            styleClass="  w-full"  [options]="state" optionLabel="nombre"></p-dropdown>
+            <small class="p-error" *ngIf="formCustomer.get('customerState')?.invalid && formCustomer.get('customerState')?.touched" >Dato requerido.</small>
+        </div>
+        <div class="field">
+            <label for="genero">Género</label>
+            <p-dropdown formControlName="customerGender" id="genero" appendTo="body" [showClear]="false" 
+            placeholder="Seleccione" [ngClass]="{'ng-invalid ng-dirty': formCustomer.get('customerGender')?.invalid && formCustomer.get('customerGender')?.touched}"
+            styleClass="  w-full" [options]="genders" optionLabel="nombre"></p-dropdown>
+            <small class="p-error" *ngIf="formCustomer.get('customerState')?.invalid && formCustomer.get('customerState')?.touched">Dato requerido.</small>
+        </div>
+    </div>
+    <div class="flex-row md:flex-col  justify-content-around py-3">
+        <p-button label="Cancel" styleClass="col-12 md:col-6  p-button-text" (onClick)="closeForm()"></p-button>
+        <p-button [disabled]="formCustomer.get('customerName')?.invalid || formCustomer.get('customerCountry')?.invalid || formCustomer.get('customerState')?.invalid || formCustomer.get('customerGender')?.invalid " 
+        label="Confirm"  styleClass="col-12 md:col-6  p-button-primary" (onClick)="confirmForm()" ></p-button>
+    </div>
+</form>

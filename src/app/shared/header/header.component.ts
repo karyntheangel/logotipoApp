@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 // PrimeNG API elements
 import { MenuItem } from 'primeng/api';
@@ -9,6 +10,7 @@ import { MenuItem } from 'primeng/api';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit{
+  constructor(private router:Router){}
   @Input() home: boolean=true;
 
   menuItems!: MenuItem[] | undefined;
@@ -30,8 +32,8 @@ export class HeaderComponent implements OnInit{
     ]
   },
   { label: 'Pircing'},
-  { label:'Log in', styleClass:'block md:hidden'},
-  { label:'Sign up', styleClass:'block md:hidden bg-primary specialLink'}
+  { label:'Log in', command:()=>{this.router.navigate(['login'])}, styleClass:'block md:hidden'},
+  { label:'Sign up', command:()=>{this.router.navigate(['login'])}, styleClass:'block md:hidden bg-primary specialLink'}
   ];
 
   menuItemsDashboard=[
@@ -50,6 +52,10 @@ export class HeaderComponent implements OnInit{
 
   ngOnInit() {
     this.home? this.menuItems = this.menuItemsHome : this.menuItems= this.menuItemsDashboard;
+  }
+
+  redirectLogin(){
+    this.router.navigate(['login'])
   }
 
 
