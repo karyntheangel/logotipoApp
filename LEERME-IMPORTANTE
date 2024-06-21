@@ -1,0 +1,38 @@
+Hola, esta es la aplicación LogotipoApp.
+Fue construida con el framework Angular junto con las librerías Primeflex, PrimeNg y la herramienta json-server de typicode.
+
+El repositorio está pensado para dejar la parte del FronEnd y Backend en el mismo origen, ES MUY IMPORTANTE QUE SI QUIERE EJECUTAR CORRECTAMENTE LA APLICACIÓN, UTILICE EL COMANDO " npm run dev "
+
+En caso de problemas con la instalación, siéntase libre de contactarme.
+
+Logotipo App se maquetó en un periodo de 2 días, siguiendo las reglas conjuntas de la librería Primeflex y los componentes de PrimeNG, la mayoría de los assets fueron obtenidos de la hoja de figma que se me entregó. 
+
+La funcionalidad de formularios y algunos elementos se trabajó con el resto del tiempo
+
+¿Qué se logró?
+
+Las vistas de la landing page se completaron añadiendo también elementos que la hácen cómoda en tabletas
+
+El mismo principio para el dashboard, el login y el formulario.
+
+Se utilizaron elementos similares a tailwind, aunque algunos íconos, imágenes y distribuciones sufrieron ligeras alteraciones.
+
+El CRUD funcional de una lista de usuarios, con el añadido de que, por cada acción, hay un mensaje de feedbak para avisar si este se llevó a cabo correctamente
+
+Adicional a los filtros solicitados, la barra de navegación hace una búsqueda rápida de nombres de usuario, 
+
+El formulario se bloquea y envía alertas de error en caso de errores de tipado, sólo puede accederse al botón de confirmación en caso de que todos los campos del formulario se encuentren llenos.
+
+Se crean un ambiente de pruebas con servicios para el CRUD que funcionan con JsonServer.
+
+El sistema de carpetas utilizado para este proyecto, obviando el Root, intenta centrarse alrededor de 3 módulos (módulos centrales, compartidos y de funciones)
+
+El core está reservado para utilidades, servicios, DTOs y elementos de bajo nivel, la estructura del proyecto está preparada para recibir datos de guards, enums y resolvers.
+
+Shared guarda elementos de estilo, gráfico y reutilizables dentro de la aplicación. Elementos como el header y el footer, son frecuentes en páginas y vistas de la aplicación. los elementos de PrimeNG se declaran también en ese apartado, ya que representan casi todo con lo que está construida
+
+El feature module está pensado para que se declaren todas las vistas asociadas a un contexto. La página principal por ejemplo, puede tener más puntos de navegación, el autenticado puede generar con el tiempo variaciones y otras vistas. El dahboard incluso podría ser una aplicación diferente en algún momento
+
+La aplicación cuenta también con sitemas y subsistemas de rutas por cada módulo, esto para permitir una navegación fluida y dejar espacio a que existan guards que verifiquen si existe un log/token válido
+
+Se generaron 6 servicios ligados a JsonServer, Uno que obtiene paises, otro que obtiene estados a partir del id de un país seleccionado, la edición, creción, eliminación y obtención de los datos de usuario basado en las vistas proporcionadas.
