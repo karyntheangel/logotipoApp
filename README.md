@@ -2,9 +2,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.11.
 
+## Dependency
+
+Install the dependencies with npm install
+
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+IMPORTANT, IN ORDER TO RUN THE SERVER AND CLIENT AT THE SAME TIME, ITS IMPORTANT TO RUN ` npm run dev ` 
+
+Run `npm run dev` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
