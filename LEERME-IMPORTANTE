@@ -1,13 +1,28 @@
+
 Hola, esta es la aplicación LogotipoApp.
 Fue construida con el framework Angular junto con las librerías Primeflex, PrimeNg y la herramienta json-server de typicode.
 
-El repositorio está pensado para dejar la parte del FronEnd y Backend en el mismo origen, ES MUY IMPORTANTE QUE SI QUIERE EJECUTAR CORRECTAMENTE LA APLICACIÓN, UTILICE EL COMANDO " npm run dev "
+Instale los paquetes normalmente con el comando npm install
+
+## El repositorio está pensado para dejar la parte del FronEnd y Backend en el mismo origen, ES MUY IMPORTANTE QUE  UTILICE EL COMANDO ` npm run dev ` PARA  CARGAR TANTO EL SERVICIO DE DATOS Y EL FRONTEND
 
 En caso de problemas con la instalación, siéntase libre de contactarme.
 
 Logotipo App se maquetó en un periodo de 2 días, siguiendo las reglas conjuntas de la librería Primeflex y los componentes de PrimeNG, la mayoría de los assets fueron obtenidos de la hoja de figma que se me entregó. 
 
 La funcionalidad de formularios y algunos elementos se trabajó con el resto del tiempo
+
+SOBRE LA NAVEGACIÓN:
+
+**LA LANDIG PAGE ES EL PRIMER ELEMENTO VISIBLE, 
+**EL BOTON DE DEMO ABRE UN CUADRO DE DIALOGO CON EL VIDEO
+**LOS BOTONES DE, LOG IN, SIGN UP Y  GET STARTED CONDUCEN A LA PANTALLA DE AUTENTICACIÓN O LOGIN
+**PRESIONANDO EL BOTON DE INGRESO DE LOGIN SE ACCEDE AL DASHBOARD
+
+DE OTRO MODO, VÍA URL SE ACCEDE A ESTOS ELEMENTOS:
+/home
+/login
+/dashboard
 
 ¿Qué se logró?
 
