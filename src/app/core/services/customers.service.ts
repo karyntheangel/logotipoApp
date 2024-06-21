@@ -68,6 +68,16 @@ export class CustomersService {
     ))
   }
 
+  getUsersByFilter(filter:string){
+    const headers = this.getHeaders();
+    const path = `${this.url}/usuarios${filter}`;
+    return this.http.get<any>(path, {headers}).pipe(
+      map( respuesta => {
+        return respuesta.map((usuario: Cliente) => this.mapUsuario(usuario))
+      }
+    ))
+  }
+
   private mapUsuario(data: Cliente): Cliente {
     return {
       id: data.id.toString(),

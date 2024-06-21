@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit{
   menuItems!: MenuItem[] | undefined;
   
   menuItemsHome: MenuItem[]=[
-  { label: 'Home'},
+  { label: 'Home',command:()=>{this.router.navigate(['home'])}},
   { 
     label:'Products', 
     items: [
@@ -37,7 +37,7 @@ export class HeaderComponent implements OnInit{
   ];
 
   menuItemsDashboard=[
-    { label: 'Home'},
+    { label: 'Home',command:()=>{this.router.navigate(['home'])}},
     { label: 'Dashboard'},
     { label: 'Projects'},
     { label: 'Tasks'},

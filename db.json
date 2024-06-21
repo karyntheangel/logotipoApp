@@ -1,0 +1,169 @@
+{
+  "usuarios": [
+    {
+      "nombre": "John Does",
+      "genero": "Hombre",
+      "pais": "México",
+      "estado": "Nuevo León",
+      "avatarSRC": "assets/layout/images/people/carlos-martinez.png",
+      "id": 1
+    },
+    {
+      "nombre": "Carlos Rodríguez",
+      "genero": "Hombre",
+      "pais": "Brasil",
+      "estado": "Rio de Janeiro",
+      "avatarSRC": "assets/layout/images/people/phoenix-baker.png",
+      "id": 3
+    },
+    {
+      "nombre": "Ana María",
+      "genero": "Mujer",
+      "pais": "México",
+      "estado": "Nuevo León",
+      "avatarSRC": "assets/layout/images/people/amy-adobespark.png",
+      "id": 4
+    },
+    {
+      "nombre": "Li Wei",
+      "genero": "Hombre",
+      "pais": "México",
+      "estado": "Jalisco",
+      "avatarSRC": "assets/layout/images/people/eduardo-jimenez.jpg",
+      "id": 5
+    },
+    {
+      "id": 6,
+      "nombre": "Aisha Khan",
+      "pais": "Brasil",
+      "estado": "Sao Paulo",
+      "genero": "Mujer",
+      "avatarSRC": "assets/layout/images/people/olivya-riyhe.png"
+    },
+    {
+      "id": 7,
+      "nombre": "Olga Petrova",
+      "pais": "México",
+      "estado": "Jalisco",
+      "genero": "Mujer",
+      "avatarSRC": "assets/layout/images/people/amy-adobespark.png"
+    },
+    {
+      "id": 8,
+      "nombre": "Mohammed Ali",
+      "pais": "Argentina",
+      "estado": "Buenos Aires",
+      "genero": "Hombre",
+      "avatarSRC": "assets/layout/images/people/carlos-martinez.png"
+    },
+    {
+      "id": 9,
+      "nombre": "Fatima Zahra",
+      "pais": "Brasil",
+      "estado": "Sao Paulo",
+      "genero": "Mujer",
+      "avatarSRC": "assets/layout/images/people/camila-hernandez.jpg"
+    },
+    {
+      "id": 10,
+      "nombre": "Hans Müller",
+      "pais": "México",
+      "estado": "Jalisco",
+      "genero": "Hombre",
+      "avatarSRC": "assets/layout/images/people/phoenix-baker.png"
+    },
+    {
+      "nombre": "Angie Castro",
+      "genero": "Mujer",
+      "pais": "Argentina",
+      "estado": "Buenos Aires",
+      "avatarSRC": "assets/layout/images/people/olivya-riyhe.png",
+      "id": 11
+    },
+    {
+      "nombre": "Johana Campos",
+      "genero": "Mujer",
+      "pais": "Brasil",
+      "estado": "Rio de Janeiro",
+      "avatarSRC": "assets/layout/images/people/olivya-riyhe.png",
+      "id": 12
+    },
+    {
+      "nombre": "John Do",
+      "genero": "Hombre",
+      "pais": "México",
+      "estado": "Nuevo León",
+      "avatarSRC": "assets/layout/images/people/olivya-riyhe.png",
+      "id": 15
+    },
+    {
+      "nombre": "Alberto del Río",
+      "genero": "Hombre",
+      "pais": "México",
+      "estado": "Ciudad de México",
+      "avatarSRC": "assets/layout/images/people/carlos-martinez.png",
+      "id": 15
+    }
+  ],
+  "paises": [
+    {
+      "id": 1,
+      "nombre": "México"
+    },
+    {
+      "id": 2,
+      "nombre": "Argentina"
+    },
+    {
+      "id": 3,
+      "nombre": "Brasil"
+    }
+  ],
+  "estados": [
+    {
+      "id": 1,
+      "nombre": "Jalisco",
+      "pais_id": 1
+    },
+    {
+      "id": 2,
+      "nombre": "Nuevo León",
+      "pais_id": 1
+    },
+    {
+      "id": 3,
+      "nombre": "Ciudad de México",
+      "pais_id": 1
+    },
+    {
+      "id": 4,
+      "nombre": "Buenos Aires",
+      "pais_id": 2
+    },
+    {
+      "id": 5,
+      "nombre": "Córdoba",
+      "pais_id": 2
+    },
+    {
+      "id": 6,
+      "nombre": "Santa Fe",
+      "pais_id": 2
+    },
+    {
+      "id": 7,
+      "nombre": "Sao Paulo",
+      "pais_id": 3
+    },
+    {
+      "id": 8,
+      "nombre": "Rio de Janeiro",
+      "pais_id": 3
+    },
+    {
+      "id": 9,
+      "nombre": "Minas Gerais",
+      "pais_id": 3
+    }
+  ]
+}

@@ -56,6 +56,9 @@ export class GeneralComponent implements OnInit {
   country:Pais[]=[
   ];
   state:Estado[]=[]
+
+  searchFilters:any = {}
+  filter:string = ""
   
   constructor(
     private readonly _customerService:CustomersService,
@@ -136,6 +139,7 @@ export class GeneralComponent implements OnInit {
   }
 
   getAllStates(){
+    if(!this.selectedCountry?.id) return;
     this._customerService.getStates(this.selectedCountry.id).subscribe({
      next: (response:any)=>{
        this.state=response
@@ -164,34 +168,25 @@ export class GeneralComponent implements OnInit {
     this.getAllUsers()
    }
 
-   filterGender(event:{ value: { id: string; nombre: string } }){
-    let newUsersArray:Cliente[]=[]
-    this.mockClientes.forEach(user => {
-      if (event.value.nombre === user.genero) {
-        newUsersArray.push(user)
-      }
-      this.mockClientes=newUsersArray
-    });
+   async filterGender(event:{ value: { id: string; nombre: string } }) {
+    if(event.value?.nombre) {
+      this.searchFilters["genero"] = event.value.nombre
+    } else { delete this.searchFilters["genero"] }
+    this.getUserFiltered();
    }
 
    filterCountry(event:{ value: { id: string; nombre: string } }){
-    let newUsersArray:Cliente[]=[]
-    this.mockClientes.forEach(user => {
-      if (event.value.nombre === user.pais) {
-        newUsersArray.push(user)
-      }
-      this.mockClientes=newUsersArray
-    });
+    if(event.value?.nombre) {
+      this.searchFilters["pais"] = event.value.nombre
+    } else { delete this.searchFilters["pais"] }
+    this.getUserFiltered();
    }
 
    filterState(event:{ value: { id: string; nombre: string } }){
-    let newUsersArray:Cliente[]=[]
-    this.mockClientes.forEach(user => {
-      if (event.value.nombre === user.estado) {
-        newUsersArray.push(user)
-      }
-      this.mockClientes=newUsersArray
-    });
+    if(event.value?.nombre) {
+      this.searchFilters["estado"] = event.value.nombre
+    } else { delete this.searchFilters["estado"] }
+    this.getUserFiltered();
    }
 
    generalFilter(event:Event){
@@ -205,6 +200,24 @@ export class GeneralComponent implements OnInit {
       }
       this.mockClientes=filteredUsers;
    }
-
+   
+   getUserFiltered() {
+    this.filter = "?"
+    Object.keys(this.searchFilters).forEach((key, index) => {
+      if(index > 0) this.filter += '&' 
+      this.filter += `${key}=${this.searchFilters[key]}`
+    });
+    this._customerService.getUsersByFilter(this.filter).subscribe({
+      next: (response:any)=>{
+        this.users=response
+      },
+      error:(err) => {
+        this.messageService.add({ key: 'requestInfo', severity: 'error', summary: 'Error al realizar la solicitud', detail: err });
+      },
+      complete:()=> {
+        this.mockClientes=this.users
+      },
+      });
+   }
 
 }
