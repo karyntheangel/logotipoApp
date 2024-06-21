@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit{
-
+  video:boolean=false
   constructor( private router:Router){}
 
   ngOnInit(): void {
@@ -17,5 +17,10 @@ export class HomeComponent implements OnInit{
 redirectLogin(){
   this.router.navigate(['login'])
 }
+
+videoPlayer(){
+  this.video=true
+}
+
 
 }
